@@ -1,0 +1,29 @@
+@mixin very-very-large-display {
+  @media screen and (min-width: #{$screen-size-xl}) {
+    @content;
+  }
+}
+
+@mixin very-large-display {
+  @media screen and (max-width: #{$screen-size-xl}) {
+    @content;
+  }
+}
+
+@mixin large-display {
+  @media screen and (max-width: #{$screen-size-lg}) {
+    @content;
+  }
+}
+
+@mixin medium-display {
+  @media screen and (max-width: #{$screen-size-md}) {
+    @content;
+  }
+}
+
+@mixin small-display {
+  @media screen and (max-width: #{$screen-size-sm}) {
+    @content;
+  }
+}

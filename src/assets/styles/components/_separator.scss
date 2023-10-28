@@ -1,0 +1,29 @@
+.separator {
+  @extend .decorated;
+  @include diamond("filled");
+
+  display: flex;
+  height: 4rem;
+  border: none;
+  padding-left: $spacing-25;
+
+  @include very-very-large-display {
+    margin: $spacing-400 $spacing-1600;
+  }
+
+  @include very-large-display {
+    margin: $spacing-200 $spacing-800;
+  }
+
+  @include large-display {
+    margin: $spacing-150 $spacing-600;
+  }
+
+  @include medium-display {
+    margin: $spacing-100 $spacing-400;
+  }
+
+  @include small-display {
+    margin: $spacing-200;
+  }
+}

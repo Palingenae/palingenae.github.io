@@ -1,0 +1,16 @@
+<svg width="24" height="24" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        @media (prefers-color-scheme: light) {
+            rect {
+                fill: #739889; /* Vert */
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            rect {
+                fill: #EBD68E; /* Jaune */
+            }
+        }
+    </style>
+<rect x="-1" y="11" width="16.9706" height="16.9706" rx="4" transform="rotate(-45 -1 11)"/>
+</svg>

@@ -1,0 +1,47 @@
+.footer {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  color: $white;
+  padding: $spacing-200 $spacing-800;
+
+  @include medium-display {
+    text-align: center;
+    flex-direction: column-reverse;
+    padding: $spacing-200 $spacing-400;
+
+    .copyright {
+      text-align: center;
+      margin-top: $spacing-200;
+    }
+  }
+
+
+  @include very-very-large-display {
+    padding: $spacing-200 $spacing-1600;
+  }
+
+  @include very-large-display {
+    padding: $spacing-200 $spacing-800;
+  }
+
+
+  @include small-display {
+    padding: $spacing-200;
+  }
+
+  @include light-theme {
+    background-color: $colour-emerald-800;
+    .link.-ui {
+      color: $grey-100;
+      &:hover {
+        border-color: $grey-100
+      }
+    }
+  }
+
+  @include dark-theme {
+    background-color: $black;
+  }
+}

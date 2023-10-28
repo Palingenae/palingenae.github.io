@@ -1,0 +1,97 @@
+.hero {
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: flex-start;
+  align-items: flex-start;
+
+  &.-pageCover {
+    flex-grow: 1;
+    justify-content: flex-end;
+    padding: $spacing-800;
+
+    @include very-very-large-display {
+      padding: $spacing-800 $spacing-1600;
+    }
+
+    @include very-large-display {
+      padding: $spacing-800;
+    }
+
+    @include large-display {
+      padding: $spacing-600;
+    }
+
+    @include medium-display {
+      padding: $spacing-400;
+    }
+
+    @include small-display {
+      padding: $spacing-200;
+    }
+  }
+
+  &.-pageBanner {
+    @include top-spacer;
+    height: 80vh;
+    justify-content: flex-end;
+
+    @include very-very-large-display {
+      padding: $spacing-800 $spacing-1600;
+      padding-top: calc($spacing-800 + 3rem);
+    }
+
+    @include very-large-display {
+      padding: $spacing-800;
+      padding-top: calc($spacing-800 + 3rem);
+    }
+
+    @include large-display {
+      padding: $spacing-600;
+      padding-top: calc($spacing-800 + 3rem);
+    }
+
+    @include medium-display {
+      padding: $spacing-400;
+      padding-top: calc($spacing-600 + 3rem);
+    }
+
+    @include small-display {
+      height: fit-content;
+      padding: $spacing-400 $spacing-200;
+      padding-top: calc($spacing-400 + 3rem);
+    }
+  }
+
+  &Greeting,
+  &Description {
+    @extend h3;
+
+    font-family: $font-text;
+
+    @include light-theme {
+      color: $grey-800;
+      font-variation-settings: $text-content, $text-light-theme-regular;
+    }
+
+    @include dark-theme {
+      color: $grey-200;
+      font-variation-settings: $text-content, $text-dark-theme-regular;
+    }
+
+    &:not(.hero__description) {
+      margin-bottom: $spacing-400;
+    }
+  }
+
+  &Introduction {
+    @extend .display;
+    @extend .-fat;
+
+    font-family: $font-display;
+    max-width: 20ch;
+
+    @include dark-theme {
+      color: $grey-200;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@mixin top-spacer {
+  @include very-very-large-display {
+    padding-top: $spacing-1600;
+  }
+
+  @include medium-display {
+    padding-top: $spacing-800;
+  }
+
+}
+
+.-top-spacer {
+  @include top-spacer;
+}
