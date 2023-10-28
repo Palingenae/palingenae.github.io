@@ -1,0 +1,40 @@
+.collection {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  column-gap: $spacing-200;
+  row-gap: $spacing-200;
+
+  @include medium-display {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+  &__card {
+    @include transition(all);
+
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 8px;
+    padding: $spacing-200;
+    color: inherit;
+    border: 1px solid $grey-900;
+    border-radius: 24px;
+
+    @include medium-display {
+      gap: $spacing-400;
+      padding: $spacing-200;
+    }
+
+    .action {
+      color: transparent;
+      font-style: italic;
+    }
+
+    @include small-display {
+      @include diamond('none');
+
+      row-gap: 0;
+    }
+  }
+}

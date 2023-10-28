@@ -1,0 +1,114 @@
+$colour-ruby-1000: #2D0912;
+$colour-ruby-900: #4F0F20;
+$colour-ruby-800: #72162E;
+$colour-ruby-700: #971D3D;
+$colour-ruby-600: #AE3A59;
+$colour-ruby-500: #BB5A74;
+$colour-ruby-400: #C8798E;
+$colour-ruby-300: #D496A6;
+$colour-ruby-200: #E0B3BF;
+$colour-ruby-100: #ECD0D7;
+$colour-copper-1000: #211305;
+$colour-copper-900: #3B2208;
+$colour-copper-800: #56330C;
+$colour-copper-700: #734411;
+$colour-copper-600: #925615;
+$colour-copper-500: #B16719;
+$colour-copper-400: #C97F31;
+$colour-copper-300: #D59B5E;
+$colour-copper-200: #E1B88D;
+$colour-copper-100: #ECD3B8;
+$colour-amethyst-1000: #1D1029;
+$colour-amethyst-900: #341D4A;
+$colour-amethyst-800: #4C2B6B;
+$colour-amethyst-700: #663A90;
+$colour-amethyst-600: #7F4CAE;
+$colour-amethyst-500: #9266BA;
+$colour-amethyst-400: #A581C6;
+$colour-amethyst-300: #B89CD2;
+$colour-amethyst-200: #CCB7DE;
+$colour-amethyst-100: #DFD2EA;
+$colour-gold-1000: #1A1506;
+$colour-gold-900: #30270B;
+$colour-gold-800: #463A10;
+$colour-gold-700: #5E4D15;
+$colour-gold-600: #77621B;
+$colour-gold-500: #8F7721;
+$colour-gold-400: #AB8D27;
+$colour-gold-300: #C6A32D;
+$colour-gold-200: #DEBC46;
+$colour-gold-100: #EBD68E;
+$colour-emerald-1000: #081912;
+$colour-emerald-900: #0F2D21;
+$colour-emerald-800: #164330;
+$colour-emerald-700: #1E5941;
+$colour-emerald-600: #396E58;
+$colour-emerald-500: #558270;
+$colour-emerald-400: #739889;
+$colour-emerald-300: #90ADA1;
+$colour-emerald-200: #AFC4BB;
+$colour-emerald-100: #CCDAD4;
+$colour-cobalt-1000: #0B1239;
+$colour-cobalt-900: #142065;
+$colour-cobalt-800: #1D2E93;
+$colour-cobalt-700: #2E42B5;
+$colour-cobalt-600: #4A5BBF;
+$colour-cobalt-500: #6473C8;
+$colour-cobalt-400: #7F8CD2;
+$colour-cobalt-300: #9AA4DB;
+$colour-cobalt-200: #B6BDE5;
+$colour-cobalt-100: #D1D6EF;
+$black: #0D0D0D;
+$grey-1000: #161616;
+$grey-900: #282828;
+$grey-800: #3B3B3B;
+$grey-700: #4F4F4F;
+$grey-600: #646464;
+$grey-500: #797979;
+$grey-400: #909090;
+$grey-300: #A7A7A7;
+$grey-200: #BFBFBF;
+$grey-100: #D7D7D7;
+$white: #F4F4F4;
+$font-display: "Fraunces", serif;
+$display-action: 'SOFT' 100, 'opsz' 32, 'WONK' 0, 'wght' 200;
+$font-text: "Recursive", monospace;
+$text-ui: "MONO" 0.6, "CASL" 0, "CRSV" 0; /* UI links */
+$text-content: "MONO" 0, "CASL" 0.5 ,"CRSV" 1; /* Large text */
+$text-paragraph: "MONO" 0, "CASL" 0, "CRSV" 0; /* Paragraphs and tags */
+$text-code-block: "MONO" 1, "CASL" 0, "CRSV" 0;
+$text-code-comment: "MONO" 1, "CASL" 1, "CRSV" 1;
+$text-dark-theme-regular: "wght" 360;
+$text-light-theme-regular: "wght" 380;
+$modularscale: (
+  base: 16px,
+  ratio: 1.25
+);
+$text-width: 72ch;
+$block-width: 96rem !default;
+
+/* ----- Spacing ----- */
+$spacing-kerning: normal;
+$spacing-letter-spacing-display: -0.15rem;
+$spacing-letter-spacing-title: 0.1rem;
+$spacing-letter-spacing-text: 0.05rem;
+$spacing-display-line-height: 1.16;
+$spacing-large-text-line-height: 1.9;
+$spacing-body-line-height: 1.7;
+$spacing-25: 0.25rem;
+$spacing-50: 0.5rem;
+$spacing-100: 1rem;
+$spacing-150: 1.5rem;
+$spacing-200: 2rem;
+$spacing-300: 3rem;
+$spacing-400: 4rem;
+$spacing-600: 6rem;
+$spacing-800: 8rem;
+$spacing-1600: 16rem;
+
+/* ----- Screen sizes ----- */
+$screen-size-xxl: 160rem;
+$screen-size-xl: 120rem;
+$screen-size-lg: 90rem;
+$screen-size-md: 64rem;
+$screen-size-sm: 48rem;

@@ -1,0 +1,289 @@
+/*
+** Importing typography
+*/
+
+@font-face {
+  font-family: Fraunces;
+  font-style: normal;
+  src: url('../fonts/fraunces/Fraunces[SOFT,WONK,opsz,wght].woff2');
+}
+
+@font-face {
+  font-family: Fraunces;
+  font-style: italic;
+  src: url('../fonts/fraunces/Fraunces-Italic[SOFT,WONK,opsz,wght].woff2');
+}
+
+@font-face {
+  font-family: Recursive;
+  src: url('../fonts/recursive/Recursive_VF_1.085.woff2');
+}
+
+/*
+** Defining typographic variables
+*/
+
+h1 {
+  font-family: $font-display;
+  font-variation-settings:
+    'wght' 700,
+    'SOFT' 10,
+    'WONK' 1,
+    'opsz' 80;
+  margin-bottom: $spacing-200;
+
+  @include very-very-large-display {
+    font-size: ms(9);
+  }
+
+  @include very-large-display {
+    font-size: ms(8);
+  }
+
+  @include large-display {
+    font-size: ms(7);
+  }
+
+  @include medium-display {
+    font-size: ms(6);
+  }
+}
+
+h2 {
+  font-family: $font-display;
+  font-style: italic;
+  margin-bottom: $spacing-400;
+
+  @include light-theme {
+    color: $grey-600;
+    font-variation-settings:
+      'SOFT' 64,
+      'wght' 300,
+      'WONK' 0,
+      'opsz' 32;
+  }
+
+  @include dark-theme {
+    color: $grey-300;
+    font-variation-settings:
+      'SOFT' 64,
+      'wght' 280,
+      'WONK' 0,
+      'opsz' 32;
+  }
+
+  @include very-very-large-display {
+    font-size: ms(7);
+  }
+
+  @include very-large-display {
+    font-size: ms(6);
+  }
+
+  @include large-display {
+    font-size: ms(5);
+    margin-bottom: $spacing-300;
+  }
+
+  @include medium-display {
+    font-size: ms(4);
+    margin-bottom: $spacing-200;
+  }
+}
+
+h3 {
+  font-family: $font-text;
+  font-variation-settings: $text-content, 'wght' 700;
+  margin-bottom: $spacing-100;
+
+  @include very-very-large-display {
+    font-size: ms(5);
+  }
+
+  @include very-large-display {
+    font-size: ms(4);
+  }
+
+  @include large-display {
+    font-size: ms(3);
+  }
+
+  @include medium-display {
+    font-size: ms(2);
+  }
+}
+
+.display {
+  font-family: $font-display;
+  letter-spacing: $spacing-letter-spacing-display;
+  line-height: $spacing-display-line-height;
+  margin-bottom: $spacing-300;
+
+  @include very-very-large-display {
+    font-size: ms(11);
+  }
+
+  @include very-large-display {
+    font-size: ms(10);
+  }
+
+  @include large-display {
+    font-size: ms(9);
+    margin-bottom: $spacing-300;
+  }
+
+  @include medium-display {
+    font-size: ms(8);
+    margin-bottom: $spacing-200;
+  }
+
+  @include small-display {
+    font-size: ms(6);
+    margin-bottom: $spacing-100;
+  }
+
+  &.-fat {
+    font-variation-settings:
+      'SOFT' 0,
+      'opsz' 96,
+      'WONK' 1,
+      'wght' 900;
+  }
+
+  &.-thin {
+    font-variation-settings:
+      'SOFT' 48,
+      'opsz' 96,
+      'WONK' 1,
+      'wght' 300;
+  }
+
+  &.decorated {
+    &::after {
+      margin-top: $spacing-150;
+
+      @include medium-display {
+        margin-top: $spacing-100;
+      }
+    }
+  }
+}
+
+.paragraph {
+  font-family: $font-text, sans-serif, -apple-system, BlinkMacSystemFont, “Segoe UI”, “Roboto”, “Helvetica Neue”, sans-serif;
+  letter-spacing: $spacing-letter-spacing-text;
+  line-height: $spacing-body-line-height;
+  font-size: ms(1);
+
+  & > a,
+  & > .link {
+    color: inherit;
+
+    @include light-theme {
+      font-variation-settings: 'wght' 400;
+    }
+
+    @include dark-theme {
+      font-variation-settings: 'wght' 540;
+    }
+  }
+
+  &:not(:last-of-type) {
+    margin-bottom: $spacing-150;
+  }
+
+  @include light-theme {
+    font-variation-settings: $text-paragraph, $text-light-theme-regular;
+  }
+
+  @include dark-theme {
+    font-variation-settings: $text-paragraph, $text-dark-theme-regular;
+  }
+
+  @include small-display {
+    font-size: ms(0);
+    margin-bottom: $spacing-100;
+  }
+
+  &.-jumbo {
+    line-height: $spacing-large-text-line-height;
+    max-width: 68ch;
+    font-size: ms(3);
+
+    &:not(:last-of-type) {
+      margin-bottom: $spacing-400;
+    }
+
+    @include large-display {
+      font-size: ms(2);
+    }
+
+    @include small-display {
+      font-size: ms(1);
+    }
+  }
+
+  &.-sans {
+    font-family: $font-text;
+
+    @include light-theme {
+      font-variation-settings: $text-content, text-lightThemeRegular;
+    }
+
+    @include dark-theme {
+      font-variation-settings: $text-content, text-darkThemeRegular;
+    }
+  }
+
+  &.-serif {
+    font-family: $font-display;
+    font-variation-settings:
+      'SOFT' 32,
+      'wght' 300,
+      'WONK' 0,
+      'opsz' 32;
+  }
+}
+
+.context {
+  &.-subtitle {
+    font-family: $font-text;
+    font-size: ms(3);
+    font-variation-settings: 'wght' 700;
+    margin-bottom: $spacing-100;
+
+    @include medium-display {
+      font-size: ms(2);
+    }
+  }
+}
+
+.action {
+  font-family: $font-display;
+  font-variation-settings: $display-action;
+}
+
+b,
+strong,
+i,
+em,
+span {
+  font-family: inherit;
+  line-height: inherit;
+}
+
+i,
+em,
+.italic {
+  color: inherit;
+  font-family: inherit;
+  font-style: italic;
+}
+
+b,
+strong,
+.bold {
+  color: inherit;
+  font-family: inherit;
+  font-variation-settings: 'wght' 700;
+}

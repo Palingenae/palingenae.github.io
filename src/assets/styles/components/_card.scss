@@ -1,0 +1,177 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  &__container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: $spacing-400;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    .paragraph {
+      font-size: ms(0);
+    }
+  }
+
+  &__title {
+    @extend h3;
+
+    font-size: ms(3);
+    margin: $spacing-100 0;
+
+    @include large-display {
+      font-size: ms(2);
+    }
+  }
+
+  &__meta {
+    display: flex;
+    align-items: center;
+    gap: $spacing-400;
+
+    @include small-display {
+      gap: $spacing-100;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &__tagsContainer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: $spacing-50;
+      padding: $spacing-200 0;
+    }
+    &__repo {
+      display: flex;
+      gap: $spacing-50;
+      align-items: center;
+      padding: $spacing-100 0;
+
+      @include small-display {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+      }
+
+      &Name {
+        @include transition(color);
+        @include transition(background-color);
+        font-variation-settings: $text-code-block, $text-light-theme-regular;
+        border-radius: 4px;
+        padding: $spacing-25;
+        color: $grey-900;
+        background-color: $grey-100;
+
+        @include dark-theme {
+          color: $grey-100;
+          background-color: $grey-900;
+        }
+      }
+
+      &Type {
+        display: inline-flex;
+        text-transform: uppercase;
+        margin-bottom: $spacing-50;
+        @include light-theme {
+          font-variation-settings: $text-code-block, 'wght' 500;
+          &.-side {
+            color: $colour-gold-600;
+          }
+          &.-group {
+            color: $colour-cobalt-400;
+          }
+          &.-openClassrooms {
+            color: $colour-amethyst-400;
+          }
+        }
+
+        @include dark-theme {
+          font-variation-settings: $text-code-block, 'wght' 400;
+          &.-side {
+            color: $colour-gold-500;
+          }
+          &.-group {
+            color: $colour-cobalt-700;
+          }
+          &.-openClassrooms {
+            color: $colour-amethyst-700;
+          }
+        }
+      }
+      &Status {
+        @include transition(color);
+        @include transition(background-color);
+        font-variation-settings: $text-code-block, 'wght' 500;
+        border-radius: 4px;
+        padding: $spacing-25;
+
+        @include light-theme {
+          color: $grey-900;
+          background-color: $grey-100;
+          &.-active {
+            color: $colour-emerald-700;
+            background-color: $colour-emerald-100;
+          }
+          &.-done {
+            color: $colour-cobalt-1000;
+            background-color: $colour-cobalt-200;
+          }
+          &.-onHold {
+            color: $colour-ruby-1000;
+            background-color: $colour-ruby-100;
+          }
+          &.-abandoned {
+            color: $grey-500;
+            background-color: transparent;
+          }
+        }
+        
+        @include dark-theme {
+          color: $grey-100;
+          background-color: $grey-900;
+          &.-active {
+            color: $colour-emerald-200;
+            background-color: $colour-emerald-1000;
+          }
+          &.-done {
+            color: $colour-cobalt-100;
+            background-color: $colour-cobalt-1000;
+          }
+          &.-onHold {
+            color: $colour-ruby-100;
+            background-color: $colour-ruby-1000;
+          }
+          &.-abandoned {
+            color: $grey-400;
+            background-color: $grey-1000;
+          }
+        }
+      }
+    }
+
+    &__public {
+      &Status {
+        &.-soon {
+          color: $grey-500;
+        }
+      }
+    }
+    
+  }
+
+  &__date {
+    font-size: ms(1);
+    font-variation-settings: $text-code-block, $text-light-theme-regular;
+  }
+
+  &__footer {
+    display: flex;
+    gap: $spacing-200;
+    align-items: center;
+    padding-top: $spacing-100;
+    border-top: 1px solid $grey-800;
+  }
+}

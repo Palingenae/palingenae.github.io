@@ -1,0 +1,79 @@
+.section {
+  @include transition(background-color);
+  @include transition(color);
+
+  display: flex;
+  flex-grow: 1;
+
+  @include very-very-large-display {
+    padding: $spacing-800 $spacing-1600;
+  }
+
+  @include very-large-display {
+    padding: $spacing-800;
+  }
+
+  @include large-display {
+    padding: $spacing-600;
+  }
+
+  @include medium-display {
+    padding: $spacing-400;
+  }
+
+  @include small-display {
+    padding: $spacing-400 $spacing-200;
+  }
+
+  &.-gold {
+    @include light-theme {
+      background-color: $colour-gold-100;
+      color: $colour-gold-900;
+    }
+
+    @include dark-theme {
+      background-color: $colour-gold-900;
+      color: $colour-gold-100;
+    }
+  }
+}
+
+.division {
+  display: flex;
+}
+
+.-grow {
+  flex-grow: 1;
+}
+
+.-row {
+  flex-direction: row;
+
+  @include large-display {
+    flex-direction: column;
+  }
+}
+
+.-column {
+  flex-direction: column;
+}
+
+.-noWrap {
+  flex-wrap: nowrap;
+}
+
+.-wrap {
+  flex-wrap: wrap;
+}
+
+.-justify-spaceBetween {
+  justify-content: space-between;
+}
+
+.-justify-center {
+  justify-content: center;
+}
+
+.-align-flexEnd {
+  align-items: flex-end;
+}

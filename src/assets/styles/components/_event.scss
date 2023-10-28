@@ -1,0 +1,98 @@
+.event {
+  display: flex;
+  align-content: flex-start;
+  flex-direction: column;
+  gap: $spacing-25;
+  margin-bottom: $spacing-400;
+
+  &Meta {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: calc($spacing-1600 + $spacing-200);
+    margin-bottom: 0;
+
+    @include medium-display {
+      gap: calc($spacing-800 + $spacing-200);
+    }
+
+    @include small-display {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      gap: $spacing-50;
+    }
+  }
+
+  &Dates {
+    display: inline-flex;
+    font-size: ms(1);
+
+    @include small-display {
+      font-size: ms(0);
+    }
+
+    @include light-theme {
+      font-variation-settings: 'wght' 360;
+      color: $grey-600;
+    }
+
+    @include dark-theme {
+      font-variation-settings: 'wght' 380;
+      color: $grey-300;
+    }
+  }
+
+  &Content {
+    display: flex;
+    flex-grow: 1;
+    flex-flow: column nowrap;
+  }
+
+  &Name {
+    @extend h2;
+
+    font-size: ms(4);
+
+    @include light-theme {
+      font-variation-settings: 'wght' 450;
+    }
+
+    @include dark-theme {
+      font-variation-settings: 'wght' 480;
+    }
+
+    @include medium-display {
+      font-size: ms(3);
+    }
+
+    @include small-display {
+      font-size: ms(2);
+    }
+
+    line-height: 1.4;
+    margin-bottom: 0;
+  }
+
+  &Place {
+    @extend .paragraph;
+
+    @include light-theme {
+      color: $grey-600;
+    }
+
+    @include dark-theme {
+      color: $grey-300;
+    }
+
+    @include small-display {
+      font-size: ms(0);
+    }
+
+    margin-bottom: 0;
+  }
+
+  &Container {
+    margin-bottom: $spacing-400;
+  }
+}

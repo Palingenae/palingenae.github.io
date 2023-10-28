@@ -1,0 +1,145 @@
+.tag {
+  @include transition(all);
+
+  display: inline-flex;
+  align-items: center;
+  font-variation-settings: $text-code-block, 'wght' 550;
+  width: fit-content;
+  border-radius: 12px;
+  padding: $spacing-25 $spacing-100;
+
+  @include small-display {
+    font-size: ms(-1);
+    border-radius: 10px;
+    padding-right: $spacing-25 $spacing-50;
+  }
+
+  &.-outline {
+    @include light-theme {
+      color: $grey-600;
+      border: solid 2px $grey-400;
+    }
+
+    @include dark-theme {
+      color: $grey-400;
+      border: solid 2px $grey-400;
+    }
+
+    &Ruby {
+      @include light-theme {
+        color: $colour-ruby-600;
+        border: solid 2px $colour-ruby-600;
+      }
+
+      @include dark-theme {
+        color: $colour-ruby-400;
+        border: solid 2px $colour-ruby-400;
+      }
+    }
+  }
+
+  &.-filled {
+    @include light-theme {
+      color: $grey-100;
+      background-color: $grey-900;
+    }
+
+    @include dark-theme {
+      color: $grey-900;
+      background-color: $grey-100;
+    }
+
+    &Ruby {
+      &Light {
+        color: $colour-ruby-900;
+        background-color: $colour-ruby-200;
+      }
+    }
+
+    &Copper {
+      @include light-theme {
+        color: $white;
+        background-color: $colour-copper-400;
+      }
+
+      @include dark-theme {
+        color: $colour-copper-900;
+        background-color: $colour-copper-200;
+      }
+    }
+
+    &Amethyst {
+      @include light-theme {
+        color: $white;
+        background-color: $colour-amethyst-600;
+      }
+
+      @include dark-theme {
+        color: $colour-amethyst-900;
+        background-color: $colour-amethyst-200;
+      }
+
+      &Light {
+        color: $colour-amethyst-900;
+        background-color: $colour-amethyst-200;
+      }
+    }
+
+    &Gold {
+      @include light-theme {
+        color: $grey-900;
+        background-color: $colour-gold-200;
+      }
+
+      @include dark-theme {
+        color: $colour-gold-900;
+        background-color: $colour-gold-100;
+      }
+    }
+
+    &Emerald {
+      @include light-theme {
+        color: $white;
+        background-color: $colour-emerald-600;
+      }
+
+      @include dark-theme {
+        color: $colour-emerald-900;
+        background-color: $colour-emerald-200;
+      }
+
+      &Light {
+        color: $colour-emerald-1000;
+        background-color: $colour-emerald-300;
+      }
+    }
+
+    &Cobalt {
+      @include light-theme {
+        color: $white;
+        background-color: $colour-cobalt-600;
+      }
+
+      @include dark-theme {
+        color: $colour-cobalt-900;
+        background-color: $colour-cobalt-300;
+      }
+
+      &Light {
+        color: $colour-cobalt-900;
+        background-color: $colour-cobalt-200;
+      }
+    }
+  }
+
+  &Container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-50;
+    margin-bottom: $spacing-200;
+
+    &:last-of-type {
+      margin-bottom: $spacing-200;
+    }
+  }
+}
