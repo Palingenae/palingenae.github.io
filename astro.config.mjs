@@ -4,5 +4,6 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://palingenae.github.io',
   integrations: [react()]
 });
