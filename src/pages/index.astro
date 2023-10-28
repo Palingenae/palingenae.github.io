@@ -35,7 +35,12 @@ import Tag from "../components/Tag";
                             </div>
                         </div>
                         <div class="card__footer">
-                            <a class="link" href={ repoUrl } target="_blank" rel="noopener">Repository</a>
+                            {
+                                repoUrl !== "" ?
+                                <a class="link" href={ repoUrl } target="_blank" rel="noopener">Repository</a>
+                                : 
+                                <span class="card__meta__publicStatus -soon">Repository available soon</span>
+                            }
                             
                             { published === true ? <a class="link" href={ publicUrl } target="_blank" rel="noopener">Published project</a> : <span class="card__meta__publicStatus -soon">Available soon</span>}
                         </div>
