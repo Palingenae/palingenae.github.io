@@ -10,7 +10,7 @@
         "repoUrl": "",
         "published": true,
         "publicUrl": "https://palingenae.be",
-        "description": "Main website. Is used a the center of my content on the internet. Portfolio, blog, playground. CMS is on a different and closed repository."
+        "description": "Main website. Is used as the center of my content on the internet. Portfolio, blog, playground. CMS is on a different and closed repository."
     },
     {
         "name": "Les Films de Plein Air : Director's Cut",
@@ -89,18 +89,5 @@
         "published": false,
         "publicUrl": "",
         "description": "School project. Migrating an old Symfony project and adding tests to it."
-    },
-    {
-        "name": "Portfolio 2022",
-        "repoName": "palingenae/palingenaedotbe2022",
-        "status": "Abandoned",
-        "statusClass": "-abandoned",
-        "tech": ["Eleventy", "Sass"],
-        "type": "Side project",
-        "typeClass": "-side",
-        "repoUrl": "https://github.com/Palingenae/palingenaedotbe2022",
-        "published": false,
-        "publicUrl": "",
-        "description": "Old portfolio wannabe. Replaced by current portfolio due to a tech change."
     }
 ]
