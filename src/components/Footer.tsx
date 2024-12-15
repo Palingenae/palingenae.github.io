@@ -5,7 +5,7 @@ export default function Footer() {
                 <span className="copyright">&copy; Palingenae { new Date().getFullYear() } - All right reserved.</span>
             </div>
             <div className="division -column">
-                <a href="https://palingenae.be" className="link -ui">Main website</a>
+                <a href="https://palingenae.be" className="link --ui">Main website</a>
             </div>
         </footer>
     )

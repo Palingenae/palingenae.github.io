@@ -1,0 +1,77 @@
+@use "../modules/transitions";
+@use "../modules/breakpoints";
+@use "../modules/colored-block";
+
+/* ----- This deserves to be a mixin ----- */
+
+.button,
+%button {
+  @include transitions.transition(all);
+  @include colored-block.colored-block("neutral", "interactive");
+
+  font-variation-settings: 'wght' 500;
+  font-size: var(--fs-step-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-150);
+  border-radius: 8px;
+  text-decoration: none;
+  padding: var(--spacing-100) var(--spacing-200);
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
+  // Special case just because we can
+  &:visited {
+    color: var(--color-amethyst-500);
+  }
+
+  &Container {
+    display: flex;
+    flex-flow: row wrap;
+    gap: var(--spacing-200);
+    margin: var(--spacing-200) 0;
+
+    @include breakpoints.small-display {
+      flex-direction: column;
+      flex-grow: 1;
+    }
+  }
+
+  @include breakpoints.small-display {
+    width: 100%
+  }
+
+
+  &.-hasIcon {
+    display: inline-flex;
+    align-items: center;
+
+    .icon {
+      font-size: var(--fs-step-2);
+    }
+  }
+
+  //&.-filled {
+  //  @include colored-block.colored-block ("gray-inverse", "interactive");
+  //}
+  //
+  //&.-emerald {
+  //  @include colored-block.colored-block("color-emerald", "interactive");
+  //}
+  //
+  //&.-cobalt {
+  //  @include colored-block.colored-block("color-cobalt", "interactive");
+  //}
+  //
+  //&.-citrine {
+  //  @include colored-block.colored-block("color-citrine", "interactive");
+  //}
+  //
+  //&.-ruby {
+  //  @include colored-block.colored-block("color-ruby", "interactive");
+  //}
+}
