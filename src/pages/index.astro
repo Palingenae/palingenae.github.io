@@ -5,13 +5,16 @@ import projects from "../data/projectList.json";
 import Tag from "../components/Tag";
 ---
 <MainLayout>
-    <header class="hero -pageBanner">
-        <h1 class="display -fat">Olivia D. S.</h1>
-        <h2>@Palingenae</h2>
-        <p class="paragraph">Projects hosted on Github. Sorted by status.</p>
+    <header class="hero --pageBanner">
+        <h1 class="display --name">
+            <span>Olivia</span>
+            <span>De Scheerder</span>
+        </h1>
+        <!--<h2>@Palingenae</h2>-->
+        <p class="prose --lead">Projects hosted on Github. Sorted by status.</p>
     </header>
-    <hr class="separator">
-    <section class="section collection -column">
+    <!--<hr class="separator">-->
+    <section class="section collection">
         {
             projects.map(({name, repoName, status, statusClass, tech, type, typeClass, repoUrl, published, publicUrl, description}) => (
                 <div class="collection__card">
@@ -25,7 +28,7 @@ import Tag from "../components/Tag";
                             </p>
                         </div>
                         <div class="card__content">
-                            <p class="paragraph">{ description }</p>
+                            <p class="prose">{ description }</p>
                             <div class="card__meta__tagsContainer">
                                 {
                                     tech.map((tool: string) => (
@@ -37,12 +40,12 @@ import Tag from "../components/Tag";
                         <div class="card__footer">
                             {
                                 repoUrl !== "" ?
-                                <a class="link" href={ repoUrl } target="_blank" rel="noopener">Repository</a>
+                                <a class="link --ui" href={ repoUrl } target="_blank" rel="noopener">Repository</a>
                                 : 
-                                <span class="card__meta__publicStatus -soon">Repository available soon</span>
+                                <span class="card__meta__publicStatus --soon">Repository available soon</span>
                             }
                             
-                            { published === true ? <a class="link" href={ publicUrl } target="_blank" rel="noopener">Published project</a> : <span class="card__meta__publicStatus -soon">Available soon</span>}
+                            { published === true ? <a class="link --ui" href={ publicUrl } target="_blank" rel="noopener">Published project</a> : <span class="card__meta__publicStatus --soon">Available soon</span>}
                         </div>
                     </div>
                 </div>

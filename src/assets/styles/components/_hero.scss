@@ -1,97 +1,123 @@
+@use "../modules/transitions";
+@use "../modules/breakpoints";
+@use "../modules/typography";
+
 .hero {
   display: flex;
-  flex-flow: column nowrap;
-  align-content: flex-start;
-  align-items: flex-start;
 
-  &.-pageCover {
+  &.--pageCover {
+    display: flex;
+    flex-flow: column wrap;
     flex-grow: 1;
-    justify-content: flex-end;
-    padding: $spacing-800;
+    justify-content: space-between;
+    padding: var(--spacing-400);
+    height: calc(100lvh - 306px);
 
-    @include very-very-large-display {
-      padding: $spacing-800 $spacing-1600;
-    }
-
-    @include very-large-display {
-      padding: $spacing-800;
-    }
-
-    @include large-display {
-      padding: $spacing-600;
-    }
-
-    @include medium-display {
-      padding: $spacing-400;
-    }
-
-    @include small-display {
-      padding: $spacing-200;
+    @include breakpoints.medium-display {
+      flex-flow: column;
+      gap: var(--spacing-400);
+      height: auto;
+      padding: var(--spacing-200);
     }
   }
 
-  &.-pageBanner {
-    @include top-spacer;
-    height: 80vh;
-    justify-content: flex-end;
+  &.--pageBanner {
+    flex-direction: column;
+    gap: var(--spacing-200);
+    padding: var(--spacing-400);
 
-    @include very-very-large-display {
-      padding: $spacing-800 $spacing-1600;
-      padding-top: calc($spacing-800 + 3rem);
+    @include breakpoints.very-very-large-display {
+      padding: var(--spacing-400);
+      padding-top: var(--spacing-800);
     }
 
-    @include very-large-display {
-      padding: $spacing-800;
-      padding-top: calc($spacing-800 + 3rem);
+    @include breakpoints.very-large-display {
+      padding: var(--spacing-400);
+      padding-top: var(--spacing-800);
     }
 
-    @include large-display {
-      padding: $spacing-600;
-      padding-top: calc($spacing-800 + 3rem);
+    @include breakpoints.large-display {
+      padding: var(--spacing-400);
+      padding-top: calc(var(--spacing-400) + 3rem);
     }
 
-    @include medium-display {
-      padding: $spacing-400;
-      padding-top: calc($spacing-600 + 3rem);
+    @include breakpoints.medium-display {
+      padding: var(--spacing-400);
+      padding-top: calc(var(--spacing-600) + 3rem);
     }
 
-    @include small-display {
+    @include breakpoints.small-display {
       height: fit-content;
-      padding: $spacing-400 $spacing-200;
-      padding-top: calc($spacing-400 + 3rem);
+      padding: 0 var(--spacing-200);
+      padding-top: calc(var(--spacing-400) + 3rem);
+    }
+
+    .display {
+      margin-bottom: 0;
+    }
+
+    hr {
+      width: 100%;
     }
   }
 
-  &Greeting,
-  &Description {
-    @extend h3;
+  &__introduction {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 
-    font-family: $font-text;
-
-    @include light-theme {
-      color: $grey-800;
-      font-variation-settings: $text-content, $text-light-theme-regular;
-    }
-
-    @include dark-theme {
-      color: $grey-200;
-      font-variation-settings: $text-content, $text-dark-theme-regular;
-    }
-
-    &:not(.hero__description) {
-      margin-bottom: $spacing-400;
+    @include breakpoints.small-display {
+      justify-content: space-between;
+      gap: var(--spacing-400);
     }
   }
 
-  &Introduction {
-    @extend .display;
-    @extend .-fat;
+  &__name {
+    margin-bottom: 0;
+  }
 
-    font-family: $font-display;
-    max-width: 20ch;
+  &__role {
+    font-family: var(--font-text);
+    font-size: var(--fs-step-4);
+    // font-variation-settings: var(--weight-base);
+    font-variation-settings: 'wght' 300;
+    color: var(--neutral-600);
+    margin-bottom: 0;
+    &Container {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-50);
+    }
+  }
 
-    @include dark-theme {
-      color: $grey-200;
+  &__description {
+    font-family: var(--font-text);
+    font-variation-settings: 'wght' 300;
+    font-size: var(--fs-step-5);
+    color: var(--neutral-800);
+  }
+
+  &__aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 100%;
+    gap: var(--spacing-200);
+    &__section {
+      text-align: end;
+      &Title {
+        @extend %prose;
+        font-variation-settings: "wght" 600;
+        text-transform: uppercase;
+        font-size: var(--fs-step-2);
+        margin-bottom: var(--spacing-50);
+      }
+      &Content {
+        @extend %prose;
+        font-size: var(--fs-step-1);
+      }
     }
   }
 }

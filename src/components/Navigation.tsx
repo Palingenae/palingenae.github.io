@@ -1,12 +1,10 @@
-import Logo from '@components/Logo';
-
 export default function Navigation() {
     return (
         <nav className="navigation">
             <div className="navigation__bar">
                 <div className="navigation__logo">
                 <a href="/">
-                    <Logo />
+                    Pali.
                 </a>
             </div>
             <div className="navigation__horizontal">

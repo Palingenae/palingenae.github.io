@@ -5,6 +5,6 @@ interface TagProps {
 
 export default function Tag({ variant, label }: TagProps) {
     return (
-        <span className={`tag -${ variant }`}>{ label }</span>
+        <span className={`tag --${ variant }`}>{ label }</span>
     )
 }

@@ -1,84 +1,100 @@
+@use "../modules/transitions";
+@use "../modules/theme";
+
 a,
+.link,
 %link {
-  @include transition(all);
-  @include transition(font-variation-settings);
+  @include transitions.transition(all);
+  @include transitions.transition(font-variation-settings);
 
   width: fit-content;
-  line-height: $spacing-body-line-height;
-  text-decoration: none;
-  
-  @include light-theme {
-    color: $colour-cobalt-700;
-    
-    &:hover {
-      color: $colour-emerald-700;
-      text-decoration: underline;
-    }
-    
-    &:visited {
-      color: $colour-amethyst-700;
-    }
-  }
-  
-  @include dark-theme {
-    font-variation-settings: $text-code-block, $text-dark-theme-regular;
-    color: $colour-cobalt-200;  
-    
-    &:hover {
-      color: $colour-emerald-200;
-      text-decoration: underline;
-    }
+  line-height: var(--spacing-body-line-height);
+  font-variation-settings: var(--text-dark-theme-regular);
+  color: var(--color-cobalt-200);
 
-    &:visited {
-      color: $colour-amethyst-200;
-    }
+  &:hover {
+    color: var(--color-emerald-200);
+    text-decoration: underline;
   }
-  
 
-  &.-ui {
-    @extend %link;
+  &:visited {
+    color: var(--color-amethyst-200);
+  }
+
+
+  &.--siteName {
+    font-family: var(--font-display);
+    font-size: var(--fs-step-1);
+    font-variation-settings: 'wght' 500;
     text-decoration: none;
-    font-size: ms(1);
-    padding-bottom: $spacing-25;
-    border-bottom: solid 3px transparent;
-    margin: 0 $spacing-100;
-
-    @include medium-display {
-      margin: $spacing-50 0;
-
-      &:first-of-type {
-        margin-top: 0;
-      }
-
-      &:last-of-type {
-        margin-bottom: 0;
-      }
+    color: var(--neutral-800);
+    align-items: center;
+    &:hover {
+      display: inline;
+      color: var(--cobalt-500);
     }
+  }
 
-    @include light-theme {
-      font-variation-settings: $text-ui, "wght" 500;
-      color: $grey-900;
-      
-      &:hover {
-        border-bottom: solid 2px $grey-900;
-      }
+  &.--hasIcon {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-100);
+  }
 
+  &.--out {
+    //@include transition(all);
+    display: inline-flex;
+    font-size: var(--fs-step-1);
+    color: inherit;
+    padding: var(--spacing-25) var(--spacing-100);
+    text-decoration: none;
+    border-radius: 8px;
+
+    //&:hover,
+    //&:focus {
+    //  @include colored-block("gray", "interactive");
+    //}
+    //
+    // &:visited {
+    //   @include transition(all);
+    //   @include colored-block("color-amethyst");
+    // }
+  }
+
+  &.--ui {
+    @extend %link;
+    @include transitions.transition(all);
+
+    text-decoration: none;
+    color: inherit;
+    font-size: var(--fs-step-1);
+    padding: var(--spacing-50) var(--spacing-150);
+    border-radius: 8px;
+
+    &:hover,
+    &:focus {
+      color: inherit;
+      text-decoration: underline;
+      //@include colored-block("gray", "interactive");
     }
-  
-    @include dark-theme {
-      font-variation-settings: $text-ui, "wght" 520;
-      color: $grey-100;
-  
-      &:hover,
-      &:focus {
-        color: $colour-cobalt-300;
-        border-bottom: solid 2px $colour-cobalt-300;
-      }
-    }
+  }
 
-    &.-active {
-      font-variation-settings: $text-ui, "wght" 700;
-      border-bottom: solid 3px $grey-400;
+  &.--navigation {
+    @extend %link;
+    @include transitions.transition(all);
+
+    color: inherit;
+    width: fit-content;
+    font-size: var(--fs-step-1);
+    line-height: var(--spacing-body-line-height);
+    text-decoration: none;
+    padding: var(--spacing-25) var(--spacing-100);
+    border-radius: 8px;
+
+    &:hover,
+    &:focus {
+      background-color: var(--neutral-100);
+      color: var(--neutral-800);
     }
   }
 }
