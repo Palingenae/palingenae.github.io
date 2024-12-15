@@ -1,39 +1,86 @@
-.section {
-  @include transition(background-color);
-  @include transition(color);
+@use "../modules/transitions";
+@use "../modules/breakpoints";
+
+.section,
+%section {
+  @include transitions.transition(background-color);
+  @include transitions.transition(color);
 
   display: flex;
   flex-grow: 1;
+  justify-content: space-between;
+  padding: var(--spacing-200) var(--spacing-400);
+  gap: var(--spacing-200);
 
-  @include very-very-large-display {
-    padding: $spacing-800 $spacing-1600;
+  @include breakpoints.very-very-large-display {
+    padding: var(--spacing-800) var(--spacing-400);
   }
 
-  @include very-large-display {
-    padding: $spacing-800;
+  @include breakpoints.very-large-display {
+    padding: var(--spacing-400);
   }
 
-  @include large-display {
-    padding: $spacing-600;
+  @include breakpoints.large-display {
+    padding: var(--spacing-400);
   }
 
-  @include medium-display {
-    padding: $spacing-400;
+  @include breakpoints.medium-display {
+    flex-direction: column;
+    padding: var(--spacing-400);
   }
 
-  @include small-display {
-    padding: $spacing-400 $spacing-200;
+  @include breakpoints.small-display {
+    padding: var(--spacing-400) var(--spacing-200);
   }
 
-  &.-gold {
-    @include light-theme {
-      background-color: $colour-gold-100;
-      color: $colour-gold-900;
+  &.--offset {
+    padding: var(--spacing-800) var(--spacing-1600);
+
+    @include breakpoints.very-very-large-display {
+      padding: var(--spacing-400) var(--spacing-3200);
+      padding-top: var(--spacing-800);
     }
 
-    @include dark-theme {
-      background-color: $colour-gold-900;
-      color: $colour-gold-100;
+    @include breakpoints.very-large-display {
+      padding: var(--spacing-400) var(--spacing-2400);
+      padding-top: var(--spacing-800);
+    }
+
+    @include breakpoints.large-display {
+      padding: var(--spacing-400) var(--spacing-800);
+      padding-top: calc(var(--spacing-400) + 3rem);
+    }
+
+    @include breakpoints.medium-display {
+      padding: var(--spacing-400);
+      padding-top: calc(var(--spacing-600) + 3rem);
+    }
+
+    @include breakpoints.small-display {
+      height: fit-content;
+      padding: var(--spacing-400);
+      padding-top: calc(var(--spacing-400) + 3rem);
+    }
+  }
+
+  & > .main {
+    display: flex;
+    flex-direction: column;
+    width: 66%;
+
+    @include breakpoints.medium-display {
+      width: 100%;
+    }
+  }
+
+  & > .aside {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 33%;
+
+    @include breakpoints.medium-display {
+      width: 100%;
     }
   }
 }
@@ -49,7 +96,7 @@
 .-row {
   flex-direction: row;
 
-  @include large-display {
+  @include breakpoints.large-display {
     flex-direction: column;
   }
 }

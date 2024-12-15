@@ -1,47 +1,40 @@
+@use "../modules/transitions";
+@use "../modules/breakpoints";
+
 .footer {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
-  color: $white;
-  padding: $spacing-200 $spacing-800;
 
-  @include medium-display {
+  padding: var(--spacing-200) var(--spacing-400);
+
+  @include breakpoints.medium-display {
     text-align: center;
     flex-direction: column-reverse;
-    padding: $spacing-200 $spacing-400;
+    gap: var(--spacing-200);
+    padding: var(--spacing-200) var(--spacing-400);
 
     .copyright {
       text-align: center;
-      margin-top: $spacing-200;
+      margin-top: var(--spacing-200);
     }
   }
 
+  &__column {
+    &__last {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-200);
 
-  @include very-very-large-display {
-    padding: $spacing-200 $spacing-1600;
-  }
+      @include breakpoints.medium-display {
+        flex-direction: column-reverse;
+        justify-content: center;
+      }
 
-  @include very-large-display {
-    padding: $spacing-200 $spacing-800;
-  }
-
-
-  @include small-display {
-    padding: $spacing-200;
-  }
-
-  @include light-theme {
-    background-color: $colour-emerald-800;
-    .link.-ui {
-      color: $grey-100;
-      &:hover {
-        border-color: $grey-100
+      .link.--navigation {
+        font-size: var(--fs-step-1);
       }
     }
-  }
-
-  @include dark-theme {
-    background-color: $black;
   }
 }

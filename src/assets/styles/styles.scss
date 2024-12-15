@@ -9,14 +9,16 @@
 @import 'modules/_default';
 @import 'modules/_diamond';
 @import 'modules/_decoration';
+@import 'modules/_colored-block';
 
 @import 'components/_link';
+@import 'components/_button';
 @import 'components/_tag';
 @import 'components/_separator';
 @import 'components/_card';
-@import 'components/_event';
 @import 'components/_section';
 @import 'components/_hero';
+@import 'components/_navigation';
 @import 'components/_footer';
 
 @import "pages/_collection";

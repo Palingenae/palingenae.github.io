@@ -3,23 +3,23 @@
   gap: $spacing-200;
   align-items: center;
 
-  &.-gold {
-    @include diamond('filled', $colour-gold-600, $colour-gold-200);
-  }
-
-  &.-emerald {
-    @include diamond('filled', $colour-emerald-600, $colour-emerald-200);
-  }
-
-  &.-ruby {
-    @include diamond('filled', $colour-ruby-700, $colour-ruby-300);
-  }
+  //&.-gold {
+  //  @include diamond('filled', var(--copl), $colour-gold-200);
+  //}
+  //
+  //&.-emerald {
+  //  @include diamond('filled', $colour-emerald-600, $colour-emerald-200);
+  //}
+  //
+  //&.-ruby {
+  //  @include diamond('filled', $colour-ruby-700, $colour-ruby-300);
+  //}
 
   &::after {
     content: "";
     display: inline-flex;
     flex-grow: 1;
     height: 2px;
-    background-color: $grey-500;
+    //background-color: $grey-500;
   }
 }

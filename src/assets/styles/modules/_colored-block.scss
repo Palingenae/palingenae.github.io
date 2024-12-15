@@ -1,0 +1,25 @@
+@mixin colored-block($color: "neutral", $is-interactive: "interactive") {
+  @if $color != "neutral" and $color != "color-ruby" and $color != "color-amber" and $color != "color-citrine" and $color != "color-emerald" and $color != "color-cobalt" and $color != "color-amethyst" {
+    @error "Only available options are: 'neutral', 'neutral-inverse', 'ruby', 'amber', 'citrine', 'emerald', 'cobalt', 'amethyst'";
+  }
+
+  @if $is-interactive != "interactive" and $is-interactive != false {
+    @error "Adding interactive colors to components can only be used with the key 'interactive'";
+  }
+
+  color: var(--#{$color}-900);
+  background-color: var(--#{$color}-100);
+
+  @if $is-interactive == "interactive" {
+    &:hover,
+    &:focus {
+      color: var(--#{$color}-1000);
+      background-color: var(--#{$color}-100);
+    }
+
+    &:active {
+      color: var(--#{$color}-1000);
+      background-color: var(--#{$color}-0);
+    }
+  } @else {}
+}

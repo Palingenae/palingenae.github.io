@@ -6,35 +6,31 @@
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    gap: $spacing-400;
+    gap: var(--spacing-300);
   }
 
   &__content {
     display: flex;
     flex-direction: column;
-    .paragraph {
-      font-size: ms(0);
+    & > .prose {
+      font-size: var(--fs-step-1);
     }
   }
 
   &__title {
     @extend h3;
 
-    font-size: ms(3);
-    margin: $spacing-100 0;
-
-    @include large-display {
-      font-size: ms(2);
-    }
+    font-size: var(--fs-step-3);
+    margin: var(--spacing-300) 0;
   }
 
   &__meta {
     display: flex;
     align-items: center;
-    gap: $spacing-400;
+    gap: var(--spacing-400);
 
     @include small-display {
-      gap: $spacing-100;
+      gap: var(--spacing-100);
       flex-direction: column;
       align-items: flex-start;
     }
@@ -42,14 +38,14 @@
     &__tagsContainer {
       display: flex;
       flex-wrap: wrap;
-      gap: $spacing-50;
-      padding: $spacing-200 0;
+      gap: var(--spacing-50);
+      padding: var(--spacing-200) 0;
     }
     &__repo {
       display: flex;
-      gap: $spacing-50;
+      gap: var(--spacing-50);
       align-items: center;
-      padding: $spacing-100 0;
+      padding: var(--spacing-100) 0;
 
       @include small-display {
         flex-direction: column-reverse;
@@ -59,103 +55,59 @@
       &Name {
         @include transition(color);
         @include transition(background-color);
-        font-variation-settings: $text-code-block, $text-light-theme-regular;
+        //font-variation-settings: $text-code-block, $text-light-theme-regular;
         border-radius: 4px;
-        padding: $spacing-25;
-        color: $grey-900;
-        background-color: $grey-100;
-
-        @include dark-theme {
-          color: $grey-100;
-          background-color: $grey-900;
-        }
+        padding: var(--spacing-25);
+        color: var(--neutral-900);
+        background-color: var(--neutral-100);
       }
 
       &Type {
         display: inline-flex;
         text-transform: uppercase;
-        margin-bottom: $spacing-50;
-        @include light-theme {
-          font-variation-settings: $text-code-block, 'wght' 500;
-          &.-side {
-            color: $colour-gold-600;
-          }
-          &.-group {
-            color: $colour-cobalt-400;
-          }
-          &.-openClassrooms {
-            color: $colour-amethyst-400;
-          }
+        margin-bottom: var(--spacing-25);
+        font-variation-settings: 'wght' 500;
+        &.--side {
+          color: var(--color-citrine-600);
         }
-
-        @include dark-theme {
-          font-variation-settings: $text-code-block, 'wght' 400;
-          &.-side {
-            color: $colour-gold-500;
-          }
-          &.-group {
-            color: $colour-cobalt-700;
-          }
-          &.-openClassrooms {
-            color: $colour-amethyst-700;
-          }
+        &.--group {
+          color: var(--color-cobalt-600);
+        }
+        &.--openClassrooms {
+          color: var(--color-amethyst-600);
         }
       }
       &Status {
         @include transition(color);
         @include transition(background-color);
-        font-variation-settings: $text-code-block, 'wght' 500;
+        //font-variation-settings: $text-code-block, 'wght' 500;
         border-radius: 4px;
-        padding: $spacing-25;
-
-        @include light-theme {
-          color: $grey-900;
-          background-color: $grey-100;
-          &.-active {
-            color: $colour-emerald-700;
-            background-color: $colour-emerald-100;
+        padding: var(--spacing-25);
+          &.--active {
+            color: var(--color-emerald-800);
+            background-color: var(--color-emerald-200);
           }
-          &.-done {
-            color: $colour-cobalt-1000;
-            background-color: $colour-cobalt-200;
+          &.--done {
+            color: var(--color-cobalt-800);
+            background-color: var(--color-cobalt-100);
           }
-          &.-onHold {
-            color: $colour-ruby-1000;
-            background-color: $colour-ruby-100;
+          &.--onHold {
+            color: var(--color-ruby-800);
+            background-color: var(--color-ruby-200);
           }
-          &.-abandoned {
-            color: $grey-500;
+          &.--abandoned {
+            color: var(--neutral-500);
             background-color: transparent;
           }
-        }
-        
-        @include dark-theme {
-          color: $grey-100;
-          background-color: $grey-900;
-          &.-active {
-            color: $colour-emerald-200;
-            background-color: $colour-emerald-1000;
-          }
-          &.-done {
-            color: $colour-cobalt-100;
-            background-color: $colour-cobalt-1000;
-          }
-          &.-onHold {
-            color: $colour-ruby-100;
-            background-color: $colour-ruby-1000;
-          }
-          &.-abandoned {
-            color: $grey-400;
-            background-color: $grey-1000;
-          }
-        }
       }
     }
 
     &__public {
       &Status {
-        &.-soon {
-          color: $grey-500;
+        &.--soon {
+          font-size: var(--fs-step-1);
+          color: var(--neutral-500);
+          padding: var(--spacing-50) var(--spacing-150);
         }
       }
     }
@@ -163,8 +115,8 @@
   }
 
   &__date {
-    font-size: ms(1);
-    font-variation-settings: $text-code-block, $text-light-theme-regular;
+    font-size: var(--fs-step-1);
+    //font-variation-settings: $text-code-block, $text-light-theme-regular;
   }
 
   &__footer {
@@ -172,6 +124,6 @@
     gap: $spacing-200;
     align-items: center;
     padding-top: $spacing-100;
-    border-top: 1px solid $grey-800;
+    border-top: 1px solid var(--neutral-800);
   }
 }
